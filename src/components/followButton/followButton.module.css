@@ -1,0 +1,25 @@
+.follow_btn {
+    background: #42A5F5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+.follow_btn:hover{
+    background: #80DEEA;
+
+  }
+  
+  .following_btn {
+    background: #F06292;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }

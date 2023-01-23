@@ -1,0 +1,38 @@
+.addButton {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 30vh;
+    max-width: 30vh;
+    margin-right: 4vh;
+}
+
+/* Add a hover effect to the button */
+.addButton:hover {
+    background-color: #666;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #060a1f;
+    height: 85%;
+    overflow-y: scroll;
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
