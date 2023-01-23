@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import FollowButton from '../../components/followButton/followButton';
-import CommentList from '../../components/commentList/commentList'
-import AddComment from '../../components/addComment/addComment';
-import MatchActorFilm from "../../components/matchActorFilm/matchActorFilm"
-import MatchCategoryFilm from "../../components/matchCategoryFilm/matchCategoryFilm"
-import AddCompany from "../../components/addCompany/addCompany"
-import DeleteFilm from "../../components/deleteFilm/deleteFilm"
-import ChangeFilm from "../../components/changeFilm/changeFilm"
-import ActorListDetails from '../../components/actorListDetails/actorListDetails';
+
+import AddComment from '../../components/AddComponents/AddComment';
+import FollowButton from '../../components/FollowButton/FollowButton';
+import CommentList from '../../components/Comments/Comments'
+
+import MatchActorFilm from "../../components/MatchComponents/MatchActorFilm"
+import MatchCategoryFilm from "../../components/MatchComponents/MatchCategoryFilm"
+import MatchCompanyFilm from '../../components/MatchComponents/MatchCompanyFilm'
+
+import DeleteFilm from "../../components/DeleteComponents/DeleteFilm"
+import ChangeFilm from "../../components/EditComponents/EditFilm"
+import ActorListDetails from '../../components/FilmActorsList/FilmActorsList';
+
 import styles from "./movieDetailsPage.module.css"
-import MatchCompanyFilm from '../../components/matchCompanyFilm/matchCompanyFilm';
 import axios from 'axios'
 
 const DetailsFilm = () => {
@@ -32,6 +35,17 @@ const DetailsFilm = () => {
     if (checkLogged) check2 = true
 
     useEffect(() => {
+
+        const options = {
+            url: 'https://www.omdbapi.com/?t=Witcher&apikey=fc1fef96'
+          };
+          console.log("Testing public api")
+          axios(options).then(function (response) {
+              console.log(response.data);
+          }).catch(function (error) {
+              console.error(error);
+          });
+
         var retrievedObject = localStorage.getItem('filmTitle');
         setProps(JSON.parse(retrievedObject))
 
@@ -83,8 +97,6 @@ const DetailsFilm = () => {
     const handleAdd6 = () => {
         setIsShown6(current => !current);
     }
-    console.log("props")
-    console.log(props)
 
     return (
         <div class="main1" style={{ marginTop: "2vh" }}>

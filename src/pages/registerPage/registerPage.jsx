@@ -7,7 +7,6 @@ export default function Register() {
     // initial state
     const [EMail, setEmail] = useState("");
     const [Hasło, setPassword] = useState("");
-    const [PowtórzHasło, setConfirmPassword] = useState("");
     const [Login, setLogin] = useState("");
     const [Zdjęcie, setImage] = useState("");
     const [register, setRegister] = useState(false);
@@ -61,7 +60,7 @@ export default function Register() {
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput3" class="form-label">Powtórz Hasło</label>
-                            <input type="password" class="form-control" name="Hasło" placeholder="***********" onChange={(e) => setConfirmPassword(e.target.value)} />
+                            <input type="password" class="form-control" name="Hasło" placeholder="***********"  />
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput4" class="form-label">Link do zdjęcia</label>

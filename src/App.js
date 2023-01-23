@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/header/Header';
+import Header from './components/Header/Header';
 import Home from './pages/homePage/homePage'
 import MoviesPage from './pages/moviesPage/moviesPage'
 import PersonsPage from './pages/personsPage/personsPage.jsx'
@@ -8,7 +8,7 @@ import Register from './pages/registerPage/registerPage.jsx'
 import Login from './pages/loginPage/loginPage.jsx'
 import Profile from './pages/myProfilPage/myProfilPage.jsx'
 import DetailsFilm from './pages/movieDetailsPage/movieDetailsPage'
-import React, { Component }  from 'react';
+import React from 'react';
 
 function App() {  
   return (

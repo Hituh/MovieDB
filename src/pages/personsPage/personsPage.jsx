@@ -1,6 +1,5 @@
 import React from "react"
-import styles from "./personsPage.module.css"
-import ActorList from "../../components/actorList/actorList"
+import ActorList from "../../components/Actors/Actors"
 
 const PersonsPage = () => {
         return (

@@ -2,14 +2,9 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import styles from './loginPage.module.css'
-import Cookies from "universal-cookie";
-const cookies = new Cookies();
-
-
 export default function Login() {
     const [Hasło, setPassword] = useState("");
     const [Login, setLogin] = useState("");
-    const [login, setLogged] = useState(false);
     const [error, setError] = useState("");
 
     const getUserInfo = () => {
@@ -43,8 +38,7 @@ export default function Login() {
         };
         axios(configuration)
             .then((result) => {
-                getUserInfo()
-                setLogged(true);
+                getUserInfo();
                 // console.log(configuration);
                 setTimeout(() => { window.location.href = "/profile" }, 1500);
 

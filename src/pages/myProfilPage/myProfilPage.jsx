@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react"
 import styles from "./myProfilPage.module.css"
 import axios from "axios"
-import DeleteUser from "../../components/deleteUser/deleteUser"
-import ChangePassword from "../../components/changePassword/changePassword"
-import AddCompany from "../../components/addCompany/addCompany"
-import AddCategory from "../../components/addCategory/addCategory"
-import EditUser from "../../components/editUser/editUser"
+import DeleteUser from "../../components/DeleteComponents/DeleteUser"
+import ChangePassword from "../../components/EditComponents/EditPassword"
+import AddCompany from "../../components/AddComponents/AddCompany.jsx"
+import AddCategory from "../../components/AddComponents/AddCategory"
+import EditUser from "../../components/EditComponents/EditUser"
 
-// const dane = {
-//     Login: "Uzytkownik_nick", StatusPremium: "Premium", Picture: "jakiesTam", ListFilm: ["Wiedźmin", "Avatar", "Avengers", "Chicago Fire"],
-//     ListActors: ["Jacek Rozenek", "Dwayne Johnson", "Kevin Hart", "Johnny Depp"]
-// }
 
 export default function Profile() {
 
@@ -43,7 +39,6 @@ export default function Profile() {
                 StatusPremium: true
             })
             .then(function (response) {
-                console.log(response);
             })
 
         window.localStorage.removeItem('userInfo')
@@ -78,7 +73,7 @@ export default function Profile() {
                 <div className="container emp-profile" style={{ marginTop: "5vh", marginBottom: "2vh" }}>
                     <div className="row">
                         <div className="col" style={{ maxWidth: "fit-content" }}>
-                            <img src={dane.Zdjęcie} style={{ height: "450px" }}>
+                            <img src={dane.Zdjęcie} alt={"Profile pic"} style={{ height: "450px" }}>
                             </img>
                         </div>
                         <div className="col-md-6">

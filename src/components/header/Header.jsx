@@ -13,15 +13,15 @@ const Header = () => {
     }
     return (
         <div>
-            {check == true &&
+            {check === true &&
                 <div className="header">
                     <Link className="link" to="/" style={{ textDecoration: "none", marginLeft: "1rem" }}>MovieDB</Link>
                     <Link className="link" to="movies" style={{ textDecoration: "none", marginLeft: "1rem" }}>Lista Filmów</Link>
                     <Link className="link" to="persons" style={{ textDecoration: "none" }}>Lista Osób</Link>
                     <Link className="link" to="profile" style={{ textDecoration: "none" }}>Mój Profil</Link>
-                    <h7 className="link" style={{ textDecoration: "none", marginRight: "1rem", }} onClick={(e) => logout(e)}>Wyloguj</h7>
+                    <h6 className="link" style={{ textDecoration: "none", marginRight: "1rem", }} onClick={(e) => logout(e)}>Wyloguj</h6>
                 </div>}
-            {check == false &&
+            {check === false &&
                 <div className="header"><Link className="link" to="/" style={{ textDecoration: "none", marginLeft: "1rem" }}>MovieDB</Link>
                     <Link className="link" to="movies" style={{ textDecoration: "none", marginLeft: "1rem" }}>Lista Filmów</Link>
                     <Link className="link" to="persons" style={{ textDecoration: "none" }}>Lista Osób</Link>

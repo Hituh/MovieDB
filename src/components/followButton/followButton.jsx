@@ -1,8 +1,8 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './followButton.module.css'
+import styles from './FollowButton.module.css'
 
-function FollowButton() {
+export default function FollowButton() {
    var retrievedObject = JSON.parse(localStorage.getItem('filmTitle'));
     var dane = JSON.parse(localStorage.getItem('userInfo'));
     var Film_Id = retrievedObject.Id
@@ -65,4 +65,3 @@ function FollowButton() {
       </>
    )
 }
-export default FollowButton;
