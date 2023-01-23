@@ -63,18 +63,18 @@ export default function MatchCategoryFilm() {
     return (
         <div className={styles.cont}>
             <div className={styles.form_container}>
-                <h2>Przypisz kategorię do filmu</h2>
+                <h2>Assign category to this film</h2>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div class="mb-3">  
-                        <label for="title" class="form-label"  >Nazwa Kategorii</label>
+                        <label for="title" class="form-label"  >Category name</label>
                         <input type="text" class="form-control" name="Kategoria_Id" onChange={(e) => setName(e.target.value)} />
                     </div>
-                    <p>Dostępne kategorie</p>
+                    <p>Avaiable categories</p>
                     <p style={{ fontSize: "12px" }}>{Categories}</p>
                     {error !== "" &&
                         <p style={{ color: "#F48FB1" }}>{error}</p>}
                     <div>
-                        <button className={styles.Button2} onSubmit={(e) => handleSubmit(e)}>Dodaj</button>
+                        <button className={styles.Button2} onSubmit={(e) => handleSubmit(e)}>Assign</button>
                     </div>
                 </form>
             </div>

@@ -46,13 +46,13 @@ export default function AddCategory() {
     return (
         <div className = {styles.cont}>
             <div className={styles.form_container}>
-                <h2>Nowa kategoria</h2>
+                <h2>New category</h2>
                 <from onSubmit={(e) => handleSubmit(e)}>
                     <div class="mb-3">
-                        <label for="title" class="form-label">Nazwa</label>
+                        <label for="title" class="form-label">Name</label>
                         <input type="text" class="form-control" name="Imie" onChange={(e) => setNazwa(e.target.value)} />
                     </div>
-                    <p>Dostępne kategorie</p>
+                    <p>Avaiable categories</p>
                     <p style={{fontSize: "12px"}}>{Categories}</p>  
                     {added ? (
                         <p className="text-success">Category added succesfully</p>
@@ -60,7 +60,7 @@ export default function AddCategory() {
                         <></>
                     )}
                     <div class="mb-3">
-                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Dodaj Kategorie</button>
+                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Add category</button>
                     </div>
                 </from>
 

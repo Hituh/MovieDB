@@ -54,29 +54,29 @@ export default function Login() {
             <div className={styles.form_container}>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div className="col-md-7">
-                        <h1 class="h11">Logowanie</h1>
+                        <h1 class="h11">Sign In</h1>
                     </div>
                     <div class="mb-3">
                         <label for="login" class="form-label">Login</label>
                         <input type="text" class="form-control" id="login" onChange={e => setLogin(e.target.value)} />
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Hasło</label>
+                        <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div class="mb-3">
-                        <button className={styles.Button2} onSubmit={(e) => handleSubmit(e)}>Zaloguj</button>
+                        <button className={styles.Button2} onSubmit={(e) => handleSubmit(e)}>Login</button>
                     </div>
                     {error !== "" &&
                     <p style={{color:"#F48FB1"}}>{error}</p>}
                     
                 </form>
                 <div>
-                    <label for="btnSuccess" class="form-label" >Nie masz konta?</label>
+                    <label for="btnSuccess" class="form-label" >You don't own an account yet?</label>
 
                 </div>
                 <div>
-                    <Link className="link" to="register" style={{ textDecoration: "none" }}>Rejestracja</Link>
+                    <Link className="link" to="register" style={{ textDecoration: "none" }}>Sign Up</Link>
                 </div>
             </div>
         </div>

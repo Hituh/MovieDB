@@ -27,9 +27,9 @@ export default class Actors extends Component {
         return (
             <div>
                 <div className={styles.form_container}>
-                    <h3 style={{ maxWidth: "35vh", marginRight: "0px" }}>Wyszukaj osobę</h3>
-                    <input type="text" className={styles.form_input} value={this.state.term} onChange={this.onInputChange} placeholder="Wpisz Imię"></input>
-                    <button className={styles.Button2}>Szukaj!</button>
+                    <h3 style={{ maxWidth: "35vh", marginRight: "0px" }}>Search actor</h3>
+                    <input type="text" className={styles.form_input} value={this.state.term} onChange={this.onInputChange} placeholder="Enter name"></input>
+                    <button className={styles.Button2}>Search!</button>
                 </div>
                 {(this.state.term === '') &&
                     <div className={styles.card_list}>

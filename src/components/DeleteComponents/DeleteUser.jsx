@@ -45,17 +45,17 @@ export default function DeleteUser() {
     return (
         <div className={styles.cont}>
             <div className={styles.form_container}>
-                <h2>Podaj usuwanego użytkownika</h2>
+                <h2>Enter the user to be banned</h2>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div class="mb-3">
-                        <label for="title" class="form-label">Login użytkownika</label>
+                        <label for="title" class="form-label">Login</label>
                         <input type="login" class="form-control" name="Login" onChange={(e) => setNazwa(e.target.value)} />
                     </div>
-                    <p>Lista Użytkowników</p>
+                    <p>List of users</p>
                     <p style={{ fontSize: "12px" }}>{Companies}</p>
                 
                     <div>
-                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)} >Usuń</button>
+                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)} >Ban</button>
                     </div>
                 </form>
             </div>

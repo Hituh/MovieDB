@@ -68,34 +68,34 @@ export default function EditFilm() {
     return (
         <div className={styles.cont}>
             <div className={styles.form_container}>
-                <h3>Edytuj Film</h3>
+                <h3>Edit film</h3>
                 <from onSubmit={(e) => handleSubmit(e)}>
                     <div class="mb-3">
-                        <label for="title" class="form-label" >Tytuł Filmu</label>
+                        <label for="title" class="form-label" >Title</label>
                         <input type="text" class="form-control" name="Tytuł" value={Tytuł} onChange={(e) => setTytuł(e.target.value)}/>
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label" >Data Wydania Filmu</label>
+                        <label for="title" class="form-label" >Release date</label>
                         <input type="text" class="form-control" name="Tytuł" value={Data_Wydania} onChange={(e) => setData(e.target.value)}/>
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label" >Język Filmu</label>
+                        <label for="title" class="form-label" >Languag</label>
                         <input type="text" class="form-control" name="Tytuł" value={Język} onChange={(e) => setJęzyk(e.target.value)}/>
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label" >Długość Filmu</label>
+                        <label for="title" class="form-label" >Length</label>
                         <input type="text" class="form-control" name="Tytuł" value={Długość} onChange={(e) => setDługość(e.target.value)}/>
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label" >Opis Filmu</label>
+                        <label for="title" class="form-label" >Description</label>
                         <input type="text" class="form-control" name="Tytuł" value={Opis} onChange={(e) => setOpis(e.target.value)}/>
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label" >Zdjęcie Filmu</label>
+                        <label for="title" class="form-label" >Picture</label>
                         <input type="text" class="form-control" name="Tytuł" value={Zdjęcie}  onChange={(e) => setZdjęcie(e.target.value)}/>
                     </div>
                     <div>
-                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Zmień</button>
+                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Edit</button>
                     </div>
                 </from>
             </div>

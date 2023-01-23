@@ -18,7 +18,7 @@ function AddFilmButton() {
         <div>
             {check === true &&
                 <div >
-                    <button className={styles.addButton} onClick={() => handleAdd()}>Dodaj film</button>
+                    <button className={styles.addButton} onClick={() => handleAdd()}>Add film</button>
                     {isShown &&
                        
                             <AddFilm></AddFilm>

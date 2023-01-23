@@ -16,16 +16,16 @@ const Header = () => {
             {check === true &&
                 <div className="header">
                     <Link className="link" to="/" style={{ textDecoration: "none", marginLeft: "1rem" }}>MovieDB</Link>
-                    <Link className="link" to="movies" style={{ textDecoration: "none", marginLeft: "1rem" }}>Lista Filmów</Link>
-                    <Link className="link" to="persons" style={{ textDecoration: "none" }}>Lista Osób</Link>
-                    <Link className="link" to="profile" style={{ textDecoration: "none" }}>Mój Profil</Link>
-                    <h6 className="link" style={{ textDecoration: "none", marginRight: "1rem", }} onClick={(e) => logout(e)}>Wyloguj</h6>
+                    <Link className="link" to="movies" style={{ textDecoration: "none", marginLeft: "1rem" }}>Film list</Link>
+                    <Link className="link" to="persons" style={{ textDecoration: "none" }}>Actors list</Link>
+                    <Link className="link" to="profile" style={{ textDecoration: "none" }}>My profile</Link>
+                    <h6 className="link" style={{ textDecoration: "none", marginRight: "1rem", }} onClick={(e) => logout(e)}>Logout</h6>
                 </div>}
             {check === false &&
                 <div className="header"><Link className="link" to="/" style={{ textDecoration: "none", marginLeft: "1rem" }}>MovieDB</Link>
-                    <Link className="link" to="movies" style={{ textDecoration: "none", marginLeft: "1rem" }}>Lista Filmów</Link>
-                    <Link className="link" to="persons" style={{ textDecoration: "none" }}>Lista Osób</Link>
-                    <Link className="link" to="login" style={{ textDecoration: "none", marginRight: "1rem" }}>Logowanie</Link></div>}
+                    <Link className="link" to="movies" style={{ textDecoration: "none", marginLeft: "1rem" }}>Film list</Link>
+                    <Link className="link" to="persons" style={{ textDecoration: "none" }}>Actors list</Link>
+                    <Link className="link" to="login" style={{ textDecoration: "none", marginRight: "1rem" }}>Login/Register</Link></div>}
         </div>
     )
 }

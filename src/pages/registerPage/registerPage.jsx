@@ -43,7 +43,7 @@ export default function Register() {
             <div className={styles.form_container}>
                 <div className="row">
                     <div className="col-md-7">
-                        <h1>Rejestracja</h1>
+                        <h1>Sign Up</h1>
                     </div>
                     <form onSubmit={(e) => handleSubmit(e)} action="http://localhost:3000/movies">
                         <div class="mb-3">
@@ -52,22 +52,22 @@ export default function Register() {
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput2" class="form-label">Login</label>
-                            <input type="login" class="form-control" name="Login" placeholder="Nazwa_Użytkownika" onChange={(e) => setLogin(e.target.value)} />
+                            <input type="login" class="form-control" name="Login" placeholder="UserName" onChange={(e) => setLogin(e.target.value)} />
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput3" class="form-label">Hasło</label>
+                            <label for="exampleFormControlInput3" class="form-label">Password</label>
                             <input type="password" class="form-control" name="Hasło" placeholder="***********" onChange={(e) => setPassword(e.target.value)} />
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput3" class="form-label">Powtórz Hasło</label>
+                            <label for="exampleFormControlInput3" class="form-label">Repeat password</label>
                             <input type="password" class="form-control" name="Hasło" placeholder="***********"  />
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlInput4" class="form-label">Link do zdjęcia</label>
+                            <label for="exampleFormControlInput4" class="form-label">Link to profile picture</label>
                             <input type="text" class="form-control" name="Zdjęcie" placeholder="https://paczaizm.pl/content/geralt.jpg" onChange={(e) => setImage(e.target.value)} />
                         </div>
                         <div class="mb-3">
-                            <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Zarejestruj</button>
+                            <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Register</button>
                             {register ? (
                         <p className="text-success" style={{color: "white"}}>You Are Registered Successfully</p>
                     ) : (
@@ -78,11 +78,11 @@ export default function Register() {
                     <p style={{color:"#F48FB1"}}>{error}</p>}
                         </div>
                         <div>
-                            <label for="btnSuccess" class="form-label">Masz już konto?</label>
+                            <label for="btnSuccess" class="form-label">Already have an account?</label>
                             
                         </div>
                         <div>
-                        <Link className="link" to="/login" style={{ textDecoration: "none" }}>Logowanie</Link>
+                        <Link className="link" to="/login" style={{ textDecoration: "none" }}>Login</Link>
                         </div>
                     </form>
                     

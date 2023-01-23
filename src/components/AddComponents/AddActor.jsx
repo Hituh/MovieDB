@@ -37,30 +37,30 @@ export default function AddActor (){
         return(
             <div className = {styles.cont}>
             <div className={styles.form_container}>
-                    <h2>Nowa osoba</h2>
+                    <h2>New actor</h2>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div class="mb-3">
-                    <label for="title" class="form-label">Imię</label>
+                    <label for="title" class="form-label">Name</label>
                     <input type="text" class="form-control" name="Imie" onChange={(e) => setName(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label">Nazwisko</label>
+                    <label for="title" class="form-label">Surname</label>
                     <input type="text" class="form-control" name="Nazwisko" onChange={(e) => setSurname(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label">Data Urodzenia</label>
+                    <label for="title" class="form-label">Date of birth</label>
                     <input type="RRRR-MM-DD" class="form-control" placeholder="RRRR-MM-DD" name="Data_urodzenia" onChange={(e) => setDate(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label">Kraj Pochodzenia</label>
+                    <label for="title" class="form-label">Country of origin</label>
                     <input type="text" class="form-control" name="Kraj_Pochodzenia" onChange={(e) => setCountry(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label">Zdjęcie</label>
+                    <label for="title" class="form-label">Picture</label>
                     <input type="text" class="form-control" name="Zdjecie" onChange={(e) => setImage(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                        <button className="btn btn-success" type="submit" onClick={(e) => handleSubmit(e)}>Dodaj Osobe</button>
+                        <button className="btn btn-success" type="submit" onClick={(e) => handleSubmit(e)}>Add actor</button>
                     </div>
             </form>
             

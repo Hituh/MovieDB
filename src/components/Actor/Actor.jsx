@@ -28,19 +28,19 @@ export default function Actor (props) {
       </div>
       <div className={styles.card.image}>
         <div class="columnleft">
-          <p>Data Urodzenia: {props.Birthday}</p>
+          <p>Birth date: {props.Birthday}</p>
         </div>
         <div class="columnright">
           <div class="Length">
             <p>
-              Kraj pochodzenia: {props.Country}
+              Country of origin: {props.Country}
             </p>
           </div>
         </div>
       </div>
       {check === true &&
         <div>
-          <button className={styles.filmItem} onClick={() => handleAdd1()}>Edytuj Osobę</button>
+          <button className={styles.filmItem} onClick={() => handleAdd1()}>Edit actor</button>
           {isShown1 &&
             <div>
               <ChangeActor  
@@ -56,7 +56,7 @@ export default function Actor (props) {
       }
       {check === true &&
         <div>
-          <button className={styles.filmItem} onClick={() => handleAdd2()}>Usuń Osobę</button>
+          <button className={styles.filmItem} onClick={() => handleAdd2()}>Delete actor</button>
           {isShown2 &&
             <div >
               <DeleteActor 

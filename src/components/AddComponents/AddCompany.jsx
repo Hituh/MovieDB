@@ -49,17 +49,17 @@ export default function AddCompany() {
     return (
         <div className={styles.cont}>
             <div className={styles.form_container}>
-                <h2>Nowa Firma Produkcyjna</h2>
+                <h2>New company</h2>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div class="mb-3">
-                        <label for="title" class="form-label" >Nazwa</label>
+                        <label for="title" class="form-label" >Name</label>
                         <input type="text" class="form-control" name="Nazwa" onChange={(e) => setNazwa(e.target.value)}/>
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label" >Siedziba</label>
+                        <label for="title" class="form-label" >Headquarters</label>
                         <input type="text" class="form-control" name="Siedziba" onChange={(e) => setSiedziba(e.target.value)}/>
                     </div>
-                    <p>Dostępne Firmy</p>
+                    <p>Avaiable companies</p>
                     <p style={{ fontSize: "12px" }}>{Companies}</p>
                     {added ? (
                         <p className="text-success">Firm added succesfully</p>
@@ -67,7 +67,7 @@ export default function AddCompany() {
                         <></>
                     )}
                     <div>
-                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Dodaj</button>
+                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Add</button>
                     </div>
                 </form>
             </div>

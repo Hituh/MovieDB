@@ -32,22 +32,22 @@ export default function EditPassword() {
     return (
         <div className={styles.cont}>
             <div className={styles.form_container}>
-                <h3>Podaj nowe hasło</h3>
+                <h3>Change password</h3>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div class="mb-3">
-                        <label for="title" class="form-label">Nowe Hasło</label>
+                        <label for="title" class="form-label">New password</label>
                         <input type="password" class="form-control" onChange={(e) => setHasło(e.target.value)} />
                     </div>
                     <div class="mb-3">
-                        <label for="title" class="form-label">Potwierdź Hasło</label>
+                        <label for="title" class="form-label">Confirm password</label>
                         <input type="password" class="form-control" onChange={(e) => setPotwierdźHasło(e.target.value)} />
                     </div>
                     {Hasło === PotwierdźHasło && (Hasło !== "") ?
                         <div>
-                            <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Zmień</button>
+                            <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Change</button>
                         </div> :
                         <div>
-                            <p>Hasła różnią się</p>
+                            <p>Passwords do not match or both fields are empty</p>
                         </div>
                     }
                 </form>

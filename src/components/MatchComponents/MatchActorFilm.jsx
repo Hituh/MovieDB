@@ -76,27 +76,27 @@ export default function MatchActorFilm() {
     return (
         <div className = {styles.cont}>
             <div className={styles.form_container}>
-                <h2>Przypisz osobę do filmu</h2>
+                <h2>Assign actor to this film</h2>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div class="mb-3">
-                        <label class="form-label">Imię Osoby</label>
+                        <label class="form-label">Name</label>
                         <input type="text" class="form-control" name="Imie" onChange={(e) => setName(e.target.value)} />
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Nazwisko Osoby</label>
+                        <label class="form-label">Surname</label>
                         <input type="text" class="form-control" name="Nazwisko" onChange={(e) => setSurname(e.target.value)} />
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Rola lub Stanowisko Osoby</label>
+                        <label class="form-label">Role</label>
                         <input type="text" class="form-control" name="Stanowisko" onChange={(e) => setJob(e.target.value)} />
                     </div>
                     {added && 
-                    <p>Pomyślnie dodano osobę do filmu</p>}
+                    <p>Succesfully assigned actor to this film</p>}
                     {error !== "" &&
                     <p style={{color:"#F48FB1"}}>{error}</p>}
                     <div>
-                        <button className={styles.Button2} onClick={() => (setType('Aktor'))} onSubmit={(e) => handleSubmit(e)}>Dodaj jako aktora</button>
-                        <button className={styles.Button2} onClick={() => (setType('Pracownik'))} onSubmit={(e) => handleSubmit(e)}>Dodaj jako pracownika</button>
+                        <button className={styles.Button2} onClick={() => (setType('Aktor'))} onSubmit={(e) => handleSubmit(e)}>Add actor</button>
+                        
                     </div>
                 </form>
             </div>

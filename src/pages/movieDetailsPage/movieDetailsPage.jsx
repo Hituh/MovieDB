@@ -112,19 +112,19 @@ const DetailsFilm = () => {
                                     <div className="col" style={{ fontSize: "50px" }}>
                                         {props.Title}
                                     </div>
-                                    <h3 >Język: {props.Language}</h3>
-                                    <p style={{ paddingTop: "2vh" }}>Kategorie:
+                                    <h3 >Language: {props.Language}</h3>
+                                    <p style={{ paddingTop: "2vh" }}>Categories:
                                         {categories === '' && (
-                                            <div>Nie dodano jeszcze kategorii do tego tytułu</div>
+                                            <div>There are no categories assigned yet</div>
                                         )}{categories} </p>
-                                    <p style={{ paddingTop: "2vh" }}>Firmy Produkcyjne:
+                                    <p style={{ paddingTop: "2vh" }}>Companies:
                                         {companies === '' && (
-                                            <div>Nie dodano jeszcze firm produkcyjnych do tego tytułu</div>
+                                            <div>There are no companies assigned yet</div>
                                         )}{companies} </p>
-                                    <p style={{ paddingTop: "2vh" }}>Data wydania : {props.ReleaseDate}</p>
+                                    <p style={{ paddingTop: "2vh" }}>Release date : {props.ReleaseDate}</p>
                                     <div className="row" style={{ paddingTop: "2vh" }}>
                                         <div style={{ maxWidth: "1100px" }}>
-                                            Opis: {props.Description}
+                                            Description: {props.Description}
                                         </div>
                                     </div>
                                 </div>
@@ -145,32 +145,32 @@ const DetailsFilm = () => {
                 </div>
                 {check === true &&
                     <div style={{ marginTop: "1vh" }}>
-                        <button className={styles.addButton} onClick={() => handleAdd1()}>Dodaj Osobę</button>
+                        <button className={styles.addButton} onClick={() => handleAdd1()}>Assign actor</button>
                         {isShown1 &&
                             <div>
                                 <MatchActorFilm ></MatchActorFilm>
                             </div>
                         }
 
-                        <button className={styles.addButton} onClick={() => handleAdd2()}>Dodaj Kategorię</button>
+                        <button className={styles.addButton} onClick={() => handleAdd2()}>Assign category</button>
                         {isShown2 &&
                             <div>
                                 <MatchCategoryFilm></MatchCategoryFilm>
                             </div>
                         }
-                        <button className={styles.addButton} onClick={() => handleAdd5()}>Dodaj wytwórnię</button>
+                        <button className={styles.addButton} onClick={() => handleAdd5()}>Assign company</button>
                         {isShown5 &&
                             <div>
                                 <MatchCompanyFilm />
                             </div>
                         }
-                        <button className={styles.addButton} onClick={() => handleAdd4()}>Edytuj Film</button>
+                        <button className={styles.addButton} onClick={() => handleAdd4()}>Edit film</button>
                         {isShown4 &&
                             <div>
                                 <ChangeFilm />
                             </div>
                         }
-                        <button className={styles.addButton} onClick={() => handleAdd3()}>Usuń film</button>
+                        <button className={styles.addButton} onClick={() => handleAdd3()}>Delete film</button>
                         {isShown3 &&
                             <div>
                                 <DeleteFilm
@@ -185,7 +185,7 @@ const DetailsFilm = () => {
                         <CommentList />
                     </div>
                 </div>
-                {check2 && <button className={styles.addButton} onClick={() => handleAdd6()}>Dodaj komentarz</button>}
+                {check2 && <button className={styles.addButton} onClick={() => handleAdd6()}>Add comment</button>}
 
                 {isShown6 &&
                     <div className="row" style={{ paddingTop: "50px" }}>

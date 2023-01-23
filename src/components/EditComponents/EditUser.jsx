@@ -65,7 +65,7 @@ export default function EditUser (){
         return(
             <div className = {styles.cont}>
             <div className={styles.form_container}>
-                    <h3>Edytuj Użytkownika</h3>
+                    <h3>Edit user</h3>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div class="mb-3">
                     <label for="title" class="form-label" >Login</label>
@@ -76,25 +76,25 @@ export default function EditUser (){
                     <input type="text" class="form-control" onChange={(e) => setEmail(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >Hasło</label>
+                    <label for="title" class="form-label" >Password</label>
                     <input type="text" class="form-control" onChange={(e) => setHasło(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >StatusPremium</label>
+                    <label for="title" class="form-label" >Premium status</label>
                     <input type="text" class="form-control" onChange={(e) => setStatusPremium(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >TypKonta</label>
+                    <label for="title" class="form-label" >Account type</label>
                     <input type="text" class="form-control" onChange={(e) => setTypKonta(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >Zdjęcie</label>
+                    <label for="title" class="form-label" >Picture</label>
                     <input type="text" class="form-control" onChange={(e) => setZdjęcie(e.target.value)}/>
                 </div>
-                <p>Lista Użytkowników</p>
+                <p>Users list</p>
                     <p style={{ fontSize: "12px" }}>{Users}</p>
                 <div>
-                <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Zmień</button>
+                <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Edit</button>
                 </div>
             </form>
             </div>

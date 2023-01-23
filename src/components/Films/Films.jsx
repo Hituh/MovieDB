@@ -32,9 +32,9 @@ export default class Movies extends Component {
         return (
             <div>
                 <div className={styles.form_container}>
-                    <h3 style={{ maxWidth: "30vh", marginRight: "0px" }}>Wyszukaj tytuł</h3>
-                    <input type="text" className={styles.form_input} value={this.state.term} onChange={this.onInputChange} placeholder="Wpisz nazwę tytułu"></input>
-                    <button className={styles.Button2} onClick={this.onTermSubmit}>Szukaj!</button>
+                    <h3 style={{ maxWidth: "30vh", marginRight: "0px" }}>Search for title</h3>
+                    <input type="text" className={styles.form_input} value={this.state.term} onChange={this.onInputChange} placeholder="Title name"></input>
+                    <button className={styles.Button2} onClick={this.onTermSubmit}>Search!</button>
                 </div>
 
                 {(this.state.term === '') &&

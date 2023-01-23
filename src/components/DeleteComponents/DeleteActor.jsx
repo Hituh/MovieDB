@@ -25,8 +25,8 @@ export default function DeleteActor (props) {
         return (
             <div className={styles.cont}>
                 <div className={styles.form_container}>
-                    <h2>Czy na pewno?</h2>
-                        <button className={styles.Button2} type="submit"  onClick={(e) => handleSubmit(e)}>Tak</button>
+                    <h2>Are you sure?</h2>
+                        <button className={styles.Button2} type="submit"  onClick={(e) => handleSubmit(e)}>Yes</button>
                 </div>
             </div>
         )

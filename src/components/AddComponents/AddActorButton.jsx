@@ -18,7 +18,7 @@ export default function AddActorButton() {
         <div>
             {check === true &&
                 <div>
-                    <button className={styles.addButton} onClick={() => handleAdd()}>Dodaj Osobe</button>
+                    <button className={styles.addButton} onClick={() => handleAdd()}>Add actor</button>
                     {isShown &&
                         <div><AddActor></AddActor>
                         </div>

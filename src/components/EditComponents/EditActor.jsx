@@ -51,30 +51,30 @@ export default function EditActor (props) {
         return(
             <div className = {styles.cont}>
             <div className={styles.form_container}>
-                    <h2>Zmień dane aktora</h2>
+                    <h2>Edit actor</h2>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >Imię aktora</label>
+                    <label for="title" class="form-label" >Name</label>
                     <input type="text" class="form-control" name="Imie" value={Imię} onChange={(e) => setImię(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >Nazwisko aktora</label>
+                    <label for="title" class="form-label" >Surname</label>
                     <input type="text" class="form-control" name="Nazwisko" value={Nazwisko} onChange={(e) => setNazwisko(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >Data Urodzenia</label>
+                    <label for="title" class="form-label" >Date of birth</label>
                     <input type="RRRR-MM-DD" class="form-control" name="Nazwisko" value={Data_Urodzenia} onChange={(e) => setData(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >Kraj Pochodzenia</label>
+                    <label for="title" class="form-label" >Country of origin</label>
                     <input type="text" class="form-control" name="Nazwisko" value={Kraj_Pochodzenia} onChange={(e) => setKraj(e.target.value)}/>
                 </div>
                 <div class="mb-3">
-                    <label for="title" class="form-label" >Zdjęcie</label>
+                    <label for="title" class="form-label" >Picture</label>
                     <input type="text" class="form-control" name="Zdjęcie" value={Zdjęcie} onChange={(e) => setZdjęcie(e.target.value)}/>
                 </div>
                 <div>
-                    <button type="submit" onClick={(e) => handleSubmit(e)}>Zmień</button>
+                    <button type="submit" onClick={(e) => handleSubmit(e)}>Edit</button>
                 </div>
             </form>
             </div>

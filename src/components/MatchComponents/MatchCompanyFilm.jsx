@@ -5,9 +5,6 @@ import axios from 'axios'
 export default function MatchCompanyFilm() {
     const [Nazwa, setName] = useState("");
     const [Companies, setCompanies] = useState()
-
-    const [added, setAdded] = useState(false);
-    const [error, setError] = useState("");
     var filmInfo = JSON.parse(localStorage.getItem('filmTitle'));
     var Film_Id = filmInfo.Id;
 
@@ -24,10 +21,7 @@ export default function MatchCompanyFilm() {
                     kategorie = kategorie + ' ' + res.data[i].Nazwa
                 }
                 setCompanies(kategorie)})
-                setAdded(true)
-            .catch(function (error) {
-                setError(error.response.data.message);
-            });
+                
     }
 , [])
 
@@ -57,30 +51,27 @@ const handleSubmit = (e) => {
                 .then(() => {
                 })
                 .catch(function (error) {
-                    setError(error.response.data.message);
+                    
                 });
         })
         .catch(function (error) {
-            setError(error.response.data.message);
+            
         });
 }
 return (
     <div className={styles.cont}>
         <div className={styles.form_container}>
-            <h2>Przypisz firmę do filmu</h2>
+            <h2>Assign company to this film</h2>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div class="mb-3">
-                    <label for="title" class="form-label"  >Nazwa Firmy</label>
+                    <label for="title" class="form-label"  >Company name</label>
                     <input type="text" class="form-control" name="Kategoria_Id" onChange={(e) => setName(e.target.value)} />
                 </div>
-                <p>Dostępne Firmy</p>
+                <p>Avaiable companies</p>
                 <p style={{ fontSize: "12px" }}>{Companies}</p>
-                {added &&
-                    <p>Pomyślnie dodano firmę do filmu</p>}
-                {error !== "" &&
-                    <p style={{ color: "#F48FB1" }}>{error}</p>}
+
                 <div>
-                    <button className={styles.Button2} onSubmit={(e) => handleSubmit(e)}>Dodaj</button>
+                    <button className={styles.Button2} onSubmit={(e) => handleSubmit(e)}>Assign</button>
                 </div>
             </form>
         </div>

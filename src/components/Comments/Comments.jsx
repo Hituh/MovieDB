@@ -35,7 +35,7 @@ export default function Comments() {
 						</div>))}
 				</div> :
 				<div>
-					<h3>Nikt nie dodał jeszcze komentarzy</h3>
+					<h3>No one has commented yet</h3>
 				</div>
 
 			}

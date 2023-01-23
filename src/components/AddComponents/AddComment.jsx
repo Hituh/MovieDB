@@ -36,18 +36,18 @@ export default function AddComment () {
         return (
             <div className={styles.cont}>
                 <div className={styles.form_container}>
-                    <h2>Dodaj komentarz</h2>
+                    <h2>New comment</h2>
                     <form onSubmit={(e) => handleSubmit(e)}>
                         <div class="mb-3">
-                            <label for="title" class="form-label" >Treść komentarza</label>
+                            <label for="title" class="form-label" >Comment content</label>
                             <input type="textarea" class="form-control" name="Komentarz" onChange={(e) => setKomentarz(e.target.value)}/>
                         </div>
                         <div class="mb-3">
-                            <label for="title" class="form-label" >Ocena</label>
+                            <label for="title" class="form-label" >Rating</label>
                             <input type="number" min="0" max="5" class="form-control" name="Komentarz"style={{maxWidth: "10vh"}}onChange={(e) => setOcena(e.target.value)} />
                         </div>
                         <div>
-                            <button type="submit" onClick={(e) => handleSubmit(e)}>Dodaj komentarz</button>
+                            <button type="submit" onClick={(e) => handleSubmit(e)}>Add comment</button>
                         </div>
                     </form>
                 </div>

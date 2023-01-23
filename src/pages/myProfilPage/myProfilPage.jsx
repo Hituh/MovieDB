@@ -78,23 +78,23 @@ export default function Profile() {
                         </div>
                         <div className="col-md-6">
                             <div className="profile-head">
-                                <div className="col" style={{ fontSize: "50px" }}>Witaj {dane.Login}!</div>
+                                <div className="col" style={{ fontSize: "50px" }}>Hello {dane.Login}!</div>
                                 {dane.StatusPremium ? (
                                     <h6 class="premium">Premium</h6>
                                 ) : (
                                     <div style={{ marginBottom: "0.6rem" }}>
-                                        <h6 class="premium">Brak Premium</h6>
-                                        <button className={styles.addButton} onClick={(e) => handleSubmit(e)}>Zakup premium</button>
+                                        <h6 class="premium">No premium</h6>
+                                        <button className={styles.addButton} onClick={(e) => handleSubmit(e)}>Buy premium now!</button>
                                     </div>
                                 )}
                                 <h6 class="premium">{dane.TypKonta}</h6>
 
                                 <div>
                                     {observed.length === 0 && (
-                                        <div>Nie obserwujesz jeszcze żadnych tytułów</div>
+                                        <div>You are not following any titles yet</div>
                                     )}
                                     {observed.length !== 0 && (
-                                        <div>Obserwowane filmy:
+                                        <div>Followed titles:
                                             <ul>
                                                 {observed.map((item) => (
                                                     <li key={item}>
@@ -110,7 +110,7 @@ export default function Profile() {
                         </div>
                     </div>
                     <div style={{ marginTop: "1vh" }}>
-                        <button className={styles.addButton} onClick={() => handleChangePwd()}>Zmień hasło</button>
+                        <button className={styles.addButton} onClick={() => handleChangePwd()}>Change password</button>
                         {isShownChangePwd &&
                             <div>
                                 <ChangePassword></ChangePassword>
@@ -120,30 +120,31 @@ export default function Profile() {
 
                         {check === true &&
                             <>
-                                <button className={styles.addButton} onClick={() => handleDelete()}>Zbanuj Użytkownika</button>
+                                <button className={styles.addButton} onClick={() => handleDelete()}>Ban user</button>
                                 {isShownDelete &&
                                     <div>
                                         <DeleteUser ></DeleteUser>
                                     </div>
                                 }
-                                <button className={styles.addButton} onClick={() => handleAddComp()}>Dodaj Firme</button>
-                                {isShownAddComp &&
-                                    <div>
-                                        <AddCompany></AddCompany>
-                                    </div>
-                                }
-                                <button className={styles.addButton} onClick={() => handleAddCat()}>Dodaj Kategorię</button>
-                                {isShownAddCat &&
-                                    <div>
-                                        <AddCategory></AddCategory>
-                                    </div>
-                                }
-                                <button className={styles.addButton} onClick={() => handleEditUser()}>Edytuj Użytkownika</button>
+                                <button className={styles.addButton} onClick={() => handleEditUser()}>Edit user</button>
                                 {isShownEditUser &&
                                     <div>
                                         <EditUser />
                                     </div>
                                 }
+                                <button className={styles.addButton} onClick={() => handleAddComp()}>Add company</button>
+                                {isShownAddComp &&
+                                    <div>
+                                        <AddCompany></AddCompany>
+                                    </div>
+                                }
+                                <button className={styles.addButton} onClick={() => handleAddCat()}>Add category</button>
+                                {isShownAddCat &&
+                                    <div>
+                                        <AddCategory></AddCategory>
+                                    </div>
+                                }
+                                
                             </>
                         }
                     </div>
