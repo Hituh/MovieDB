@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import ChangeActor from "../EditComponents/EditActor";
 import DeleteActor from "../DeleteComponents/DeleteActor";
 import styles from "./Actor.module.css"
+
 export default function Actor (props) {
 
   const [isShown1, setIsShown1] = useState(false);

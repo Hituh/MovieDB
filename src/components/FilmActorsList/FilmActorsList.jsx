@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
-
+import s from "./FilmActorsList.module.css"
 class ActorListDetails extends Component {
 	constructor() {
 		super();
@@ -31,20 +31,19 @@ class ActorListDetails extends Component {
 		return (
 			<div>
 				{this.state.nameList.length === 0 && (
-                    <div>There is no actors assigned to this film yet</div>
-                )}
-                {this.state.nameList.length !== 0 && (
-                    <div>Actors list:
-					<ul>
-						{this.state.nameList.map((item) => (
-							<li key={item.Imię}>
-								{item.Imię} {item.Nazwisko}
-							</li>
-						))}
-					</ul>
-                    </div>
-                )}
-				
+					<h3>There is no actors assigned to this film yet</h3>
+				)}
+				{this.state.nameList.length !== 0 && (
+					<div>
+						<ul>Actors list:
+							{this.state.nameList.map((item) => (
+								<li key={item.Imię}>
+									<p>{item.Imię} {item.Nazwisko}</p>
+								</li>
+							))}
+						</ul>
+					</div>
+				)}
 			</div>
 		);
 	}

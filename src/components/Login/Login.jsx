@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
-import styles from './loginPage.module.css'
+import styles from './Login.module.css'
+
 export default function Login() {
     const [Hasło, setPassword] = useState("");
     const [Login, setLogin] = useState("");
@@ -40,7 +41,6 @@ export default function Login() {
             .then((result) => {
                 getUserInfo();
                 // console.log(configuration);
-                setTimeout(() => { window.location.href = "/profile" }, 1500);
 
             })
             .catch(function (error)  {

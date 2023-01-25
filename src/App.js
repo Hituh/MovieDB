@@ -1,33 +1,70 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Home from './pages/homePage/homePage'
-import MoviesPage from './pages/moviesPage/moviesPage'
-import PersonsPage from './pages/personsPage/personsPage.jsx'
-import Register from './pages/registerPage/registerPage.jsx'
-import Login from './pages/loginPage/loginPage.jsx'
-import Profile from './pages/myProfilPage/myProfilPage.jsx'
-import DetailsFilm from './pages/movieDetailsPage/movieDetailsPage'
-import React from 'react';
+import Login from './components/Login/Login.jsx'
+import Profile from './components/Profile/Profile'
+import React, { useState } from 'react';
+import Actors from './components/Actors/Actors';
+import Movies from './components/Films/Films';
+import s from "./components/FilmDetails/FilmDetails.module.css"
 
-function App() {  
+function App() {
+  const [films, setFilm] = useState(true);
+  const [actors, setActors] = useState(false);
+  const [profile, setProfile] = useState(false);
+  const [login, setLogin] = useState(false);
+
+  var check = false
+  if (localStorage.getItem("userInfo") !== null) {
+    check = true
+  }
+
+  const toggleFilms = () => {
+    setFilm(true);
+    setActors(false);
+    setProfile(false)
+    setLogin(false)
+  }
+  const toggleActors = () => {
+    setActors(true);
+    setFilm(false);
+    setProfile(false)
+    
+    setLogin(false)
+  }
+  const toggleProfile = () => {
+    setActors(false);
+    setFilm(false);
+    setProfile(true);
+    setLogin(false)
+  }
+  const toggleLogin = () => {
+    setFilm(false);
+    setActors(false);
+    setProfile(false)
+    setLogin(true)
+  }
+  const toggleLogout = () => {
+    setFilm(true);
+    setActors(false);
+    setProfile(false)
+  }
+
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route index element={<Home />}></Route>
-          <Route path="movies" element={<MoviesPage />}/>
-          <Route path="persons" element={<PersonsPage/>}/>
-          <Route path="login/register" element={<Register />}/>
-          <Route path="login" element={<Login />}/>
-          <Route path="profile" element={<Profile />}/>
-          <Route path="/filmDetails" element={<DetailsFilm />}/>
-          <Route path="/*" element={<h2>Bad route</h2>}/>
-        </Routes>
-      </Router>
+    <div class="App">
+      <div className={s.parentApp}>
+        <div className={s.divApp1}>
+          <button className={s.button} onClick={toggleFilms}>Movie list</button></div>
+        <div className={s.divApp2}>
+          <button className={s.button} onClick={toggleActors}>Actors list</button></div>
+        <div className={s.divApp3}>
+        <button className={s.button} onClick={toggleProfile}>My Profile</button></div>
+
+      </div >
+      {films && <Movies />}
+      {actors && <Actors />}
+      {profile && <Profile />}
     </div>
-  );
+  )
+
 }
 
 export default App;

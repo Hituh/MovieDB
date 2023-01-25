@@ -1,6 +1,6 @@
 .cont {
-    min-width: 95%;
-    max-width: 95%;
+    min-width: 90vw;
+    max-width: 90vw;
     margin-top: 2vh;
     margin-bottom: 2vh;
     background: #757575;
@@ -17,10 +17,6 @@
 	padding: 20px;
 }
 
-form {
-	display: flex;
-	flex-direction: column;
-}
 
 label {
 	font-weight: bold;

@@ -1,12 +1,12 @@
 .cont {
     min-width: 20%;
     max-width: 25%;
+    margin-left: 37.5%;
     margin-top: 2vh;
     margin-bottom: 2vh;
     background: #757575;
     border-radius: 10px;
     color:#EEEEEE;
-    margin-left: 2.5%;
     margin-top: 2vh;
 }
 

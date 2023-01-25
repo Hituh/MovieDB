@@ -2,3 +2,28 @@
   margin: 0;
   padding: 0;
 }
+
+.button {
+  display: inline-block;
+border: none;
+outline: none;
+padding: 10px 10px;
+font-size: 16px;
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: 1px;
+color: white;
+background-color: #333;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+min-width: 90%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-left: 5%
+
+}
+
+.button:hover {
+  background-color: #666;
+}

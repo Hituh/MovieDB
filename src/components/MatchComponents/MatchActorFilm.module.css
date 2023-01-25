@@ -55,7 +55,7 @@ input {
     cursor: pointer;
     transition: 0.3s;
     min-width: 25vh;
-    margin-left: 20%;
+    margin-left: calc(50% - 12.5vh)
 }
 
 .Button2:hover {
