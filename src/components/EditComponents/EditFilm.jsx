@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import styles from './EditFilm.module.css'
 
-export default function EditFilm() {
+export default function EditFilm(props) {
     const [Film_Id, setId] = useState("");
     const [Tytuł, setTytuł] = useState("");
     const [Data_Wydania, setData] = useState("");
@@ -12,32 +12,21 @@ export default function EditFilm() {
     const [Zdjęcie, setZdjęcie] = useState("");
     const [parsed, setParsed] = useState("");
 
-    var retrievedObject = JSON.parse(localStorage.getItem('filmTitle'));
     useEffect(() => {
-        if(parsed === "") {
+        if (parsed === "") {
             setParsed("parsed")
-            setId(retrievedObject.Id)
-            setTytuł(retrievedObject.Title)
-            setData(retrievedObject.ReleaseDate)
-            setJęzyk(retrievedObject.Language)
-            setDługość(retrievedObject.Length)
-            setOpis(retrievedObject.Description)
-            setZdjęcie(retrievedObject.Picture)}
-        
+            setId(props.props.Id)
+            setTytuł(props.props.Title)
+            setData(props.props.ReleaseDate)
+            setJęzyk(props.props.Language)
+            setDługość(props.props.Length)
+            setOpis(props.props.Description)
+            setZdjęcie(props.props.Picture)
+        }
     })
 
     const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
         e.preventDefault();
-        var lstorage = {
-            Id: Film_Id,
-            Title: Tytuł,
-            ReleaseDate: Data_Wydania,
-            Length: Długość,
-            Description: Opis,
-            Picture: Zdjęcie,
-            Language: Język
-        }
         // set configurations
         const configuration = {
             method: "post",
@@ -54,49 +43,32 @@ export default function EditFilm() {
         };
         axios(configuration)
             .then(() => {
-                window.localStorage.removeItem('filmTitle')
-                localStorage.setItem("filmTitle", JSON.stringify(lstorage));
                 window.location.reload(false);
             })
             .catch((error) => {
                 error = new Error();
-
             });
     }
-    
 
     return (
         <div className={styles.cont}>
             <div className={styles.form_container}>
                 <h3>Edit film</h3>
                 <from onSubmit={(e) => handleSubmit(e)}>
-                    <div class="mb-3">
-                        <label for="title" class="form-label" >Title</label>
-                        <input type="text" class="form-control" name="Tytuł" value={Tytuł} onChange={(e) => setTytuł(e.target.value)}/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label" >Release date</label>
-                        <input type="text" class="form-control" name="Tytuł" value={Data_Wydania} onChange={(e) => setData(e.target.value)}/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label" >Languag</label>
-                        <input type="text" class="form-control" name="Tytuł" value={Język} onChange={(e) => setJęzyk(e.target.value)}/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label" >Length</label>
-                        <input type="text" class="form-control" name="Tytuł" value={Długość} onChange={(e) => setDługość(e.target.value)}/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label" >Description</label>
-                        <input type="text" class="form-control" name="Tytuł" value={Opis} onChange={(e) => setOpis(e.target.value)}/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label" >Picture</label>
-                        <input type="text" class="form-control" name="Tytuł" value={Zdjęcie}  onChange={(e) => setZdjęcie(e.target.value)}/>
-                    </div>
-                    <div>
-                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Edit</button>
-                    </div>
+                    <label htmlFor="title" class="form-label" >Title</label>
+                    <input type="text" class="form-control" name="Tytuł" value={Tytuł} onChange={(e) => setTytuł(e.target.value)} />
+                    <label htmlFor="title" class="form-label" >Release date</label>
+                    <input type="text" class="form-control" name="Tytuł" value={Data_Wydania} onChange={(e) => setData(e.target.value)} />
+                    <label htmlFor="title" class="form-label" >Languag</label>
+                    <input type="text" class="form-control" name="Tytuł" value={Język} onChange={(e) => setJęzyk(e.target.value)} />
+                    <label htmlFor="title" class="form-label" >Length</label>
+                    <input type="text" class="form-control" name="Tytuł" value={Długość} onChange={(e) => setDługość(e.target.value)} />
+                    <label htmlFor="title" class="form-label" >Description</label>
+                    <input type="text" class="form-control" name="Tytuł" value={Opis} onChange={(e) => setOpis(e.target.value)} />
+                    <label htmlFor="title" class="form-label" >Picture</label>
+                    <input type="text" class="form-control" name="Tytuł" value={Zdjęcie} onChange={(e) => setZdjęcie(e.target.value)} />
+                    <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Edit</button>
+
                 </from>
             </div>
         </div>

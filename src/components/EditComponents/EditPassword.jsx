@@ -8,7 +8,6 @@ export default function EditPassword() {
     var dane = JSON.parse(localStorage.getItem('userInfo'));
     var Login = dane.Login
     const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
         e.preventDefault();
         // set configurations
         const configuration = {
@@ -25,7 +24,6 @@ export default function EditPassword() {
             })
             .catch((error) => {
                 error = new Error();
-
             });
     }
 
@@ -34,22 +32,13 @@ export default function EditPassword() {
             <div className={styles.form_container}>
                 <h3>Change password</h3>
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">New password</label>
-                        <input type="password" class="form-control" onChange={(e) => setHasło(e.target.value)} />
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Confirm password</label>
-                        <input type="password" class="form-control" onChange={(e) => setPotwierdźHasło(e.target.value)} />
-                    </div>
+                    <label htmlFor="title" class="form-label">New password</label>
+                    <input type="password" class="form-control" onChange={(e) => setHasło(e.target.value)} />
+                    <label htmlFor="title" class="form-label">Confirm password</label>
+                    <input type="password" class="form-control" onChange={(e) => setPotwierdźHasło(e.target.value)} />
                     {Hasło === PotwierdźHasło && (Hasło !== "") ?
-                        <div>
-                            <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Change</button>
-                        </div> :
-                        <div>
-                            <p>Passwords do not match or both fields are empty</p>
-                        </div>
-                    }
+                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Change</button>
+                        : <p>Passwords do not match or both fields are empty</p>}
                 </form>
             </div>
         </div>
