@@ -9,13 +9,12 @@ import EditUser from "../EditComponents/EditUser"
 
 
 export default function Profile() {
-
     const [observed, setObserved] = useState([]);
     var dane = JSON.parse(localStorage.getItem('userInfo'));
 
-    var check = false
-    if (dane !== null && (dane.TypKonta === 'Moderator' || dane.TypKonta === 'Administrator')) check = true
-    else check = false
+    var permsCheck = false
+    if (dane !== null && (dane.TypKonta === 'Moderator' || dane.TypKonta === 'Administrator')) permsCheck = true
+    else permsCheck = false
 
     useEffect(() => {
         const configuration = {
@@ -90,7 +89,7 @@ export default function Profile() {
                 </div>
                 <div className={s.div3}>
                     <button className={s.addButton} onClick={() => handleChangePwd()}>Change password</button>
-                    {check === true &&
+                    {permsCheck === true &&
                         <div>
                             <button className={s.addButton} onClick={() => handleDelete()}>Ban user</button>
                             <button className={s.addButton} onClick={() => handleEditUser()}>Edit user</button>
@@ -100,7 +99,7 @@ export default function Profile() {
                     }
                 </div>
             </div>
-            {check === true && <div>
+            {permsCheck === true && <div>
                 {isShownChangePwd && <ChangePassword />}
                 {isShownDelete && <DeleteUser />}
                 {isShownEditUser && <EditUser />}
