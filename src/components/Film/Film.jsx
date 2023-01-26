@@ -3,7 +3,7 @@ import styles from "./Film.module.css";
 import { useNavigate } from "react-router-dom";
 import FilmDetails from "../FilmDetails/FilmDetails";
 
-export default function FilmItem(props) {
+export default function FilmItem (props) {
 	const [showChild, setShowChild] = useState(false)
 
 	const openChild = () => {
@@ -12,12 +12,13 @@ export default function FilmItem(props) {
 
 	const closeChild = () => {
 		setShowChild(false)
-	}
+	}	
 
 	return (
 		<div>
 			{showChild ?
-				<FilmDetails Id={props.Id} Picture={props.Picture} Title={props.Title} ReleaseDate={props.ReleaseDate} Length={props.Length} Language={props.Language} Description={props.Description} onClose={closeChild} /> :
+				<FilmDetails Id={props.Id} Picture={props.Picture} Title={props.Title} ReleaseDate={props.ReleaseDate} Length={props.Length} Language={props.Language} Description={props.Description} onClose={closeChild} /> 
+				:
 				<div className={styles.card}>
 					<div className={styles.card.img}>
 						<img src={props.Picture} alt={""} />
@@ -30,7 +31,6 @@ export default function FilmItem(props) {
 					<button className={styles.filmItem} onClick={() => openChild()}>Details</button>
 				</div>
 			}
-
 		</div >
 	);
 };

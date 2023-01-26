@@ -53,7 +53,7 @@ export default function EditFilm(props) {
     return (
         <div className={styles.cont}>
             <div className={styles.form_container}>
-                <h3>Edit film</h3>
+                <h1>Edit film</h1>
                 <from onSubmit={(e) => handleSubmit(e)}>
                     <label htmlFor="title" class="form-label" >Title</label>
                     <input type="text" class="form-control" name="Tytuł" value={Tytuł} onChange={(e) => setTytuł(e.target.value)} />

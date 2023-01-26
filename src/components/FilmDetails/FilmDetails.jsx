@@ -24,20 +24,18 @@ export default function FilmDetails(props) {
     const [plot, setPlot] = useState("")
     const [director, setDirector] = useState("")
     const [rated, setRated] = useState("")
-    const [isError, setError] = useState("true")
+    const [isMovieFound, setMovieFound] = useState("true")
     const [errorType, setErrorType] = useState("")
     const [categories, setCategories] = useState();
     const [companies, setCompanies] = useState();
 
     var userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    var check = false
+    var checkPerms = false
     var check2 = false
     var checkLogged = false
     if (userInfo !== null) checkLogged = true
-    if (checkLogged && (userInfo.TypKonta === 'Moderator' || userInfo.TypKonta === 'Administrator')) check = true
+    if (checkLogged && (userInfo.TypKonta === 'Moderator' || userInfo.TypKonta === 'Administrator')) checkPerms = true
     if (checkLogged) check2 = true
-
-    const inputReference = useRef();
 
     const updateState = () => {
         getCompanies()
@@ -76,18 +74,16 @@ export default function FilmDetails(props) {
     }
 
     useEffect(() => {
-        inputReference.current.focus();
         //Public API call
         const publicAPIConfig = {
             url: `https://www.omdbapi.com/?t=${props.Title}&apikey=fc1fef96`
         };
-        console.log("Testing public api")
         axios(publicAPIConfig).then(function (response) {
             console.log(response.data)
             setPlot(response.data.Plot)
             setDirector(response.data.Director)
             setRated(response.data.Rated)
-            setError(response.data.Response)
+            setMovieFound(response.data.Response)
             setErrorType(response.data.Error)
 
         }).catch(function (error) {
@@ -104,7 +100,7 @@ export default function FilmDetails(props) {
     const toggleAddComment = () => { setAddComment(current => !current); }
 
     return (
-        <div className={s.card} ref={inputReference}>
+        <div className={s.card}>
             <button className={s.button} onClick={props.onClose}>Go back</button>
             <div className={s.parent}>
                 <div className={s.div1}>
@@ -116,8 +112,8 @@ export default function FilmDetails(props) {
                 <div className={s.div3}>
                     <h1>{props.Title}</h1>
                     <p>Language: {props.Language}</p>
-                    {isError === "True" && <p>Director: {director}</p>}
-                    {isError === "True" && <p>Rated: {rated}</p>}
+                    {isMovieFound === "True" && <p>Director: {director}</p>}
+                    {isMovieFound === "True" && <p>Rated: {rated}</p>}
                     <p>Categories:
                         {categories === '' && (
                             <div>There are no categories assigned yet</div>
@@ -128,13 +124,13 @@ export default function FilmDetails(props) {
                         )}{companies} </p>
                     <p>Release date : {props.ReleaseDate}</p>
                     <ActorListDetails Id={props.Id} />
-                    {isError === "True" && <h3>Description: {plot}</h3>}
-                    {isError === "False" && <div><h3>Failed to fetch additional data from API: </h3>
+                    {isMovieFound === "True" && <h3>Description: {plot}</h3>}
+                    {isMovieFound === "False" && <div><h3>Failed to fetch additional data from API: </h3>
                         <p>{errorType}</p></div>}
                 </div>
             </div>
 
-            {check === true &&
+            {checkPerms === true &&
                 <div style={{ marginTop: "1vh" }}>
                     <button className={s.addButton} onClick={() => toggleMatchActorFilm()}>Assign actor</button>
                     {showMatchActorFilm && <MatchActorFilm handler={updateState} Id={props.Id} />}

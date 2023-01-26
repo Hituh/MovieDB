@@ -7,19 +7,29 @@ import styles from "./Films.module.css";
 export default function Films() {
     const [films, setFilms] = useState([])
     const [filter, setFilter] = useState("")
+    const [fetched, setFetched] = useState(false)
 
-    useEffect(() => {
-        const configuration = {
+    const fetchFilms = () => {
+        if(!fetched)
+        {
+            const configuration = {
             method: "get",
             url: "http://localhost:8080/routes/Film",
         };
         axios(configuration)
             .then((res) => {
+                console.log(res.data)
                 setFilms(res.data)
             })
             .catch((error) => {
                 error = new Error();
             });
+            setFetched(true)
+        }
+    }
+
+    useEffect(() => {
+        fetchFilms()
     })
 
     return (

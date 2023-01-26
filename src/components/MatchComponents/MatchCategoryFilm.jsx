@@ -5,7 +5,7 @@ import axios from 'axios'
 export default function MatchCategoryFilm(props) {
     const [Nazwa, setName] = useState("");
     const [Categories, setCategories] = useState()
-    const [Film_Id, setFilm_Id] = useState(0)
+    const [Film_Id] = useState(props.Id)
 
     const [error, setError] = useState("");
     const getCategories = () => {
@@ -26,7 +26,6 @@ export default function MatchCategoryFilm(props) {
     }
 
     useEffect(() => {
-        setFilm_Id(props.Id)
         getCategories()
     }, [])
 

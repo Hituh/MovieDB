@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 export default function ActorListDetails(props) {
 	const [Film_Id] = useState(props.Id)
 	const [nameList, setNameList] = useState([])
+	
 
 	useEffect(() => {
 		const configuration = {

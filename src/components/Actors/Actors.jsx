@@ -7,19 +7,27 @@ import styles from "./Actors.module.css";
 export default function Actors() {
     const [actors, setActors] = useState([])
     const [filter, setFilter] = useState("")
+    const [fetched, setFetched] = useState(false)
+
+    const fetchActors = () => {
+        if(!fetched){
+            const configuration = {
+                method: "get",
+                url: "http://localhost:8080/routes/Osoba",
+            };
+            axios(configuration)
+                .then((res) => {
+                    setActors(res.data)
+                })
+                .catch((error) => {
+                    error = new Error();
+                });
+                setFetched(true)
+        }
+    }
 
     useEffect(() => {
-        const configuration = {
-            method: "get",
-            url: "http://localhost:8080/routes/Osoba",
-        };
-        axios(configuration)
-            .then((res) => {
-                setActors(res.data)
-            })
-            .catch((error) => {
-                error = new Error();
-            });
+        fetchActors()
     })
 
     return (

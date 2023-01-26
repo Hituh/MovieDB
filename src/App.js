@@ -41,14 +41,12 @@ function App() {
           <button className={s.button} onClick={toggleActors}>Actors list</button></div>
         <div className={s.divApp3}>
         <button className={s.button} onClick={toggleProfile}>My Profile</button></div>
-
       </div >
       {films && <Movies />}
       {actors && <Actors />}
       {profile && <Profile />}
     </div>
   )
-
 }
 
 export default App;
