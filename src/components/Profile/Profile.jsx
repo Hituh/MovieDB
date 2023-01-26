@@ -32,6 +32,7 @@ export default function Profile() {
             setObserved(kategorie)
         });
     }, [])
+
     const handleSubmit = (e) => {
         axios
             .post('http://localhost:8080/routes/Uzytkownik/update', {
@@ -74,22 +75,18 @@ export default function Profile() {
                         </div>
                     )}
                     <h6 class="premium">{dane.TypKonta}</h6>
-                    <div>
-                        {observed.length === 0 && (
-                            <div>You are not following any titles yet</div>
-                        )}
-                        {observed.length !== 0 && (
-                            <div>Followed titles:
-                                <ul>
-                                    {observed.map((item) => (
-                                        <li key={item}>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </div>
+                    {observed.length === 0 && (<div>You are not following any titles yet</div>)}
+                    {observed.length !== 0 && (
+                        <div>Followed titles:
+                            <ul>
+                                {observed.map((item) => (
+                                    <li key={item}>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
                 <div className={s.div3}>
                     <button className={s.addButton} onClick={() => handleChangePwd()}>Change password</button>

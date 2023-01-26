@@ -49,7 +49,7 @@ input {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    min-width: 25vh;
+    max-width: 25vh;
     margin-left: calc(50% - 12.5vh)
 }
 

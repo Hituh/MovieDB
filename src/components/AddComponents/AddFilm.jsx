@@ -11,7 +11,6 @@ export default function AddFilm() {
     const [Zdjęcie, setImage] = useState("");
 
     const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
         e.preventDefault();
 
         // set configurations
@@ -30,45 +29,29 @@ export default function AddFilm() {
         axios(configuration)
             .then(() => {
                 window.location.reload(false);
-                
             })
             .catch((error) => {
                 error = new Error();
-
             });
     }
     return (
-        <div className = {styles.cont}>
+        <div className={styles.cont}>
             <div className={styles.form_container}>
                 <h2>New film</h2>
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    <div class="mb-3">
-                        <label for="title" class="label">Title</label>
-                        <input type="textarea" class="form-control" placeholder="Eg. The Witcher"name="Tytuł" onChange={(e) => setTitle(e.target.value)} />
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Release date</label>
-                        <input type="RRRR-MM-DD" class="form-control" placeholder="Eg. 2022-09-30" name="DataWydania" onChange={(e) => setReleaseDate(e.target.value)} />
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Language</label>
-                        <input type="text" class="form-control" placeholder="Eg. English" name="Język" onChange={(e) => setLanguage(e.target.value)} />
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Length</label>
-                        <input type="number" class="form-control" placeholder="Amount in minutes"name="Długość" onChange={(e) => setLength(e.target.value)} />
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Description</label>
-                        <input type="text" class="form-control" name="Opis" onChange={(e) => setDescription(e.target.value)} />
-                    </div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Picture</label>
-                        <input type="text" class="form-control" name="Zdjecie" onChange={(e) => setImage(e.target.value)} />
-                    </div>
-                    <div>
-                        <button type="submit" onClick={(e) => handleSubmit(e)}>Add film</button>
-                    </div>
+                    <label htmlFor="title" class="label">Title</label>
+                    <input type="textarea" class="form-control" placeholder="Eg. The Witcher" name="Tytuł" onChange={(e) => setTitle(e.target.value)} />
+                    <label htmlFor="title" class="form-label">Release date</label>
+                    <input type="RRRR-MM-DD" class="form-control" placeholder="Eg. 2022-09-30" name="DataWydania" onChange={(e) => setReleaseDate(e.target.value)} />
+                    <label htmlFor="title" class="form-label">Language</label>
+                    <input type="text" class="form-control" placeholder="Eg. English" name="Język" onChange={(e) => setLanguage(e.target.value)} />
+                    <label htmlFor="title" class="form-label">Length</label>
+                    <input type="number" class="form-control" placeholder="Amount in minutes" name="Długość" onChange={(e) => setLength(e.target.value)} />
+                    <label htmlFor="title" class="form-label">Description</label>
+                    <input type="text" class="form-control" name="Opis" onChange={(e) => setDescription(e.target.value)} />
+                    <label htmlFor="title" class="form-label">Picture</label>
+                    <input type="text" class="form-control" name="Zdjecie" onChange={(e) => setImage(e.target.value)} />
+                    <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Add film</button>
                 </form>
             </div>
         </div>

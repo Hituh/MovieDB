@@ -14,7 +14,7 @@ export default function DeleteUser() {
 
         axios(configuration).then((res) => {
             var kategorie = ''
-            for(var i = 0; i < res.data.length; i++) {
+            for (var i = 0; i < res.data.length; i++) {
                 kategorie = kategorie + ' ' + res.data[i].Login
             }
             setCompanies(kategorie)
@@ -22,14 +22,13 @@ export default function DeleteUser() {
     }, [])
 
     const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
         e.preventDefault();
         // set configurations
         const configuration = {
             method: "post",
             url: "http://localhost:8080/routes/Uzytkownik/delete",
             data: {
-                Login : Nazwa
+                Login: Nazwa
             },
         };
         axios(configuration)
@@ -38,7 +37,6 @@ export default function DeleteUser() {
             })
             .catch((error) => {
                 error = new Error();
-
             });
     }
 
@@ -46,17 +44,12 @@ export default function DeleteUser() {
         <div className={styles.cont}>
             <div className={styles.form_container}>
                 <h2>Enter the user to be banned</h2>
-                <form onSubmit={(e) => handleSubmit(e)}>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Login</label>
-                        <input type="login" class="form-control" name="Login" onChange={(e) => setNazwa(e.target.value)} />
-                    </div>
+                <form >
+                    <label htmlFor="title" class="form-label">Login</label>
+                    <input type="login" class="form-control" name="Login" onChange={(e) => setNazwa(e.target.value)} />
                     <p>List of users</p>
                     <p style={{ fontSize: "12px" }}>{Companies}</p>
-                
-                    <div>
-                        <button className={styles.Button2} onClick={(e) => handleSubmit(e)} >Ban</button>
-                    </div>
+                    <button className={styles.Button2} onClick={(e) => handleSubmit(e)} >Ban</button>
                 </form>
             </div>
         </div>

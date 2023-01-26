@@ -3,7 +3,7 @@ import styles from "./Film.module.css";
 import { useNavigate } from "react-router-dom";
 import FilmDetails from "../FilmDetails/FilmDetails";
 
-export default function FilmItem (props) {
+export default function FilmItem(props) {
 	const [showChild, setShowChild] = useState(false)
 
 	const openChild = () => {
@@ -25,20 +25,12 @@ export default function FilmItem (props) {
 					<div className={styles.card.title}>
 						<h3>{props.Title}</h3>
 					</div>
-					<div className={styles.card.image}>
-						<div class="columnleft">
-							<p>Release date: {props.ReleaseDate}</p>
-						</div>
-						<div class="columnright">
-							<div class="Length">
-								<p>Movie length: {props.Length} minutes</p>
-							</div>
-						</div>
-						<button className={styles.filmItem} onClick={() => openChild()}>Details</button>
-					</div>
+					<p>Release date: {props.ReleaseDate}</p>
+					<p>Movie length: {props.Length} minutes</p>
+					<button className={styles.filmItem} onClick={() => openChild()}>Details</button>
 				</div>
 			}
 
-		</div>
+		</div >
 	);
 };

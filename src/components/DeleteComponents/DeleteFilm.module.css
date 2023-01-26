@@ -1,7 +1,7 @@
 .cont {
     min-width: 20%;
-    max-width: 25%;
-    margin-left: 37.5%;
+    max-width: 30%;
+    margin-left: 35%;
     margin-top: 2vh;
     margin-bottom: 2vh;
     background: #757575;
@@ -54,8 +54,8 @@ input {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    min-width: 20vh;
-    margin-bottom:0.5vh;
+    min-width: 24vh;
+    margin: 1vh;
 
 }
 

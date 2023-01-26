@@ -7,7 +7,7 @@ export default function AddCategory() {
     const [Categories, setCategories] = useState()
     const [added, setAdded] = useState(false);
 
-    useEffect(() => {
+    const getCategories = () => {
         const configuration = {
             method: "get",
             url: `http://localhost:8080/routes/Kategoria`,
@@ -15,15 +15,18 @@ export default function AddCategory() {
 
         axios(configuration).then((res) => {
             var kategorie = ''
-            for(var i = 0; i < res.data.length; i++) {
+            for (var i = 0; i < res.data.length; i++) {
                 kategorie = kategorie + ' ' + res.data[i].Nazwa
             }
             setCategories(kategorie)
         });
+    }
+
+    useEffect(() => {
+        getCategories()
     }, [])
 
     const handleSubmit = (e) => {
-        // prevent the form from refreshing the whole page
         e.preventDefault();
 
         // set configurations
@@ -37,35 +40,28 @@ export default function AddCategory() {
         axios(configuration)
             .then(() => {
                 setAdded(true)
+                getCategories()
             })
             .catch((error) => {
                 error = new Error();
-
             });
     }
     return (
-        <div className = {styles.cont}>
+        <div className={styles.cont}>
             <div className={styles.form_container}>
                 <h2>New category</h2>
                 <from onSubmit={(e) => handleSubmit(e)}>
                     <div class="mb-3">
-                        <label for="title" class="form-label">Name</label>
+                        <label htmlFor="title" class="form-label">Name</label>
                         <input type="text" class="form-control" name="Imie" onChange={(e) => setNazwa(e.target.value)} />
                     </div>
                     <p>Avaiable categories</p>
-                    <p style={{fontSize: "12px"}}>{Categories}</p>  
-                    {added ? (
-                        <p className="text-success">Category added succesfully</p>
-                    ) : (
-                        <></>
-                    )}
+                    <p style={{ fontSize: "12px" }}>{Categories}</p>
                     <div class="mb-3">
                         <button className={styles.Button2} onClick={(e) => handleSubmit(e)}>Add category</button>
                     </div>
                 </from>
-
             </div>
         </div>
     )
-
 }

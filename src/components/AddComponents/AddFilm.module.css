@@ -39,7 +39,7 @@ input {
 	font-weight: bold;
 	color: black;
 }
-button[type="submit"] {
+.Button2 {
 	display: inline-block;
     border: none;
     outline: none;
@@ -53,10 +53,11 @@ button[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    min-width: 25vh;
-    margin-left: calc(50% - 12.5vh)
+    max-width: 25vh;
+    margin-left: calc(50% - 12.5vh);
+    margin-top: 2vh;
 }
 
-button[type="submit"]:hover {
+.Button2:hover {
 	background-color: #666;
 }

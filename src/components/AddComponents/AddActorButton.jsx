@@ -4,28 +4,26 @@ import styles from './AddActorButton.module.css'
 
 export default function AddActorButton() {
     var user = JSON.parse(localStorage.getItem("userInfo"))
-    var check = false
+    var checkPerms = false
 
-    if (user !== null && (user.TypKonta === 'Moderator' || user.TypKonta === 'Administrator')) check = true
-    else check = false
+    if (user !== null && (user.TypKonta === 'Moderator' || user.TypKonta === 'Administrator')) checkPerms = true
+    else checkPerms = false
 
-    const [isShown, setIsShown] = useState(false);
-    const handleAdd = () => {
-        setIsShown(current => !current);
+    const [isShown, setShow] = useState(false);
+    const toggleShow = () => {
+        setShow(current => !current);
     }
 
     return (
         <div>
-            {check === true &&
+            {checkPerms === true &&
                 <div>
-                    <button className={styles.addButton} onClick={() => handleAdd()}>Add actor</button>
+                    <button className={styles.addButton} onClick={() => toggleShow()}>Add actor</button>
                     {isShown &&
-                        <div><AddActor></AddActor>
-                        </div>
+                        <AddActor></AddActor>
                     }
                 </div>
             }
         </div>
     )
-
 }

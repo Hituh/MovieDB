@@ -1,18 +1,14 @@
 import axios from "axios";
-import React, { Component } from "react";
-import s from "./FilmActorsList.module.css"
-class ActorListDetails extends Component {
-	constructor() {
-		super();
-		this.state = {
-			nameList: [{}],
-		};
-	}
-	componentDidMount() {
-		const test = JSON.parse(localStorage.getItem("filmTitle"));
+import React, { useState, useEffect } from "react";
+
+export default function ActorListDetails(props) {
+	const [Film_Id] = useState(props.Id)
+	const [nameList, setNameList] = useState([])
+
+	useEffect(() => {
 		const configuration = {
 			method: "get",
-			url: `http://localhost:8080/routes/Film/findActors/${test.Id}`,
+			url: `http://localhost:8080/routes/Film/findActors/${Film_Id}`,
 		};
 
 		axios(configuration).then((res) => {
@@ -24,28 +20,24 @@ class ActorListDetails extends Component {
 				};
 				list.push(newPerson);
 			}
-			this.setState({ nameList: list });
+			setNameList(list);
 		});
-	}
-	render() {
-		return (
-			<div>
-				{this.state.nameList.length === 0 && (
-					<h3>There is no actors assigned to this film yet</h3>
-				)}
-				{this.state.nameList.length !== 0 && (
-					<div>
-						<ul>Actors list:
-							{this.state.nameList.map((item) => (
-								<li key={item.Imię}>
-									<p>{item.Imię} {item.Nazwisko}</p>
-								</li>
-							))}
-						</ul>
-					</div>
-				)}
-			</div>
-		);
-	}
+	}, [])
+
+	return (
+		<div>
+			{nameList.length === 0 && (
+				<h3>There is no actors assigned to this film yet</h3>
+			)}
+			{nameList.length !== 0 && (
+				<ul>Actors list:
+					{nameList.map((item) => (
+						<li key={item.Imię}>
+							<p>{item.Imię} {item.Nazwisko}</p>
+						</li>
+					))}
+				</ul>
+			)}
+		</div>
+	);
 }
-export default ActorListDetails;
